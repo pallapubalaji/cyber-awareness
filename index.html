@@ -56,12 +56,16 @@ body{
 
   width:100%;
 
-  overflow:hidden;
+  overflow-x:hidden;
+  overflow-y:auto;
 
   padding:clamp(16px, 2vw, 24px);
+  padding-block:40px;
 
   display:flex;
-  align-items:center;
+
+  align-items:flex-start;
+
   justify-content:center;
 
   background:
@@ -201,6 +205,8 @@ body::before{
   0 0 120px rgba(36,95,115,0.08);
 
   animation:fadeUp 1.2s ease;
+
+  margin:auto;
 }
 
 /* Elegant Reflection */
@@ -550,7 +556,6 @@ h1{
 @media (max-width:768px){
 
   body{
-    align-items:center;
     padding:16px;
   }
 
