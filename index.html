@@ -1,1 +1,958 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Cyber Awareness | VBIT</title>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- Mirande -->
+<link href="https://fonts.cdnfonts.com/css/mirande" rel="stylesheet">
+
+<!-- Gratia Singer -->
+<link href="https://fonts.cdnfonts.com/css/gratia-singer" rel="stylesheet">
+
+<style>
+
+:root{
+
+  /* Yacht Club Luxury Palette */
+
+  --light:#F2F0EF;
+  --soft:#BBBDBC;
+
+  --primary:#245F73;
+  --accent:#733E24;
+
+  --dark:#0f171b;
+
+  --white:#F2F0EF;
+}
+
+/* =========================
+   GLOBAL
+========================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+
+  font-family:'Inter',sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  height:100vh;
+  overflow:hidden;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:
+
+  radial-gradient(
+  circle at top left,
+  rgba(36,95,115,0.22),
+  transparent 35%
+  ),
+
+  radial-gradient(
+  circle at bottom right,
+  rgba(115,62,36,0.18),
+  transparent 35%
+  ),
+
+  linear-gradient(
+  180deg,
+  #0b1114 0%,
+  #121b20 100%
+  );
+
+  color:var(--white);
+
+  position:relative;
+
+  transition:
+  opacity 1.8s ease,
+  transform 1.8s ease,
+  filter 1.8s ease;
+}
+
+/* =========================
+   CINEMATIC NOISE
+========================= */
+
+body::before{
+
+  content:'';
+
+  position:absolute;
+  inset:0;
+
+  opacity:0.04;
+
+  background-image:
+  radial-gradient(#ffffff 1px, transparent 1px);
+
+  background-size:4px 4px;
+
+  pointer-events:none;
+}
+
+/* =========================
+   AMBIENT LIGHTS
+========================= */
+
+.blur{
+
+  position:absolute;
+
+  border-radius:50%;
+
+  filter:blur(120px);
+
+  animation:float 10s ease-in-out infinite;
+}
+
+.blur1{
+
+  width:420px;
+  height:420px;
+
+  background:rgba(36,95,115,0.22);
+
+  top:-120px;
+  left:-120px;
+}
+
+.blur2{
+
+  width:320px;
+  height:320px;
+
+  background:rgba(115,62,36,0.16);
+
+  bottom:-120px;
+  right:-80px;
+
+  animation-delay:2s;
+}
+
+@keyframes float{
+
+  0%,100%{
+    transform:translateY(0px);
+  }
+
+  50%{
+    transform:translateY(-25px);
+  }
+
+}
+
+/* =========================
+   MAIN CARD
+========================= */
+
+.card{
+
+  position:relative;
+  z-index:5;
+
+  width:92%;
+  max-width:920px;
+
+  padding:70px 60px;
+
+  border-radius:36px;
+
+  background:
+  linear-gradient(
+    135deg,
+    rgba(255,255,255,0.06),
+    rgba(255,255,255,0.025)
+  );
+
+  border:1px solid rgba(255,255,255,0.08);
+
+  backdrop-filter:blur(40px);
+
+  overflow:hidden;
+
+  box-shadow:
+  0 20px 80px rgba(0,0,0,0.45),
+  0 0 120px rgba(36,95,115,0.08);
+
+  animation:fadeUp 1.2s ease;
+}
+
+/* Elegant Reflection */
+
+.card::before{
+
+  content:'';
+
+  position:absolute;
+  inset:0;
+
+  background:
+  linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.05),
+    transparent
+  );
+
+  transform:translateX(-120%);
+  animation:shine 7s infinite;
+}
+
+@keyframes shine{
+
+  to{
+    transform:translateX(220%);
+  }
+
+}
+
+@keyframes fadeUp{
+
+  from{
+    opacity:0;
+    transform:translateY(40px) scale(0.98);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0px) scale(1);
+  }
+
+}
+
+/* =========================
+   TOP BADGE
+========================= */
+
+.badge{
+
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+
+  padding:10px 18px;
+
+  border-radius:999px;
+
+  background:rgba(255,255,255,0.04);
+
+  border:1px solid rgba(255,255,255,0.08);
+
+  color:var(--soft);
+
+  font-size:13px;
+  letter-spacing:1.5px;
+
+  margin-bottom:35px;
+
+  text-transform:uppercase;
+}
+
+.dot{
+
+  width:8px;
+  height:8px;
+
+  border-radius:50%;
+
+  background:var(--primary);
+
+  box-shadow:0 0 12px rgba(36,95,115,0.5);
+
+  animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+
+  0%,100%{
+    transform:scale(1);
+    opacity:1;
+  }
+
+  50%{
+    transform:scale(1.4);
+    opacity:0.6;
+  }
+
+}
+
+/* =========================
+   WARNING ICON
+========================= */
+
+.warning{
+
+  font-size:72px;
+
+  margin-bottom:20px;
+
+  animation:floatIcon 3s ease-in-out infinite;
+}
+
+@keyframes floatIcon{
+
+  0%,100%{
+    transform:translateY(0px);
+  }
+
+  50%{
+    transform:translateY(-6px);
+  }
+
+}
+
+/* =========================
+   TITLE
+========================= */
+
+h1{
+
+  font-family:'Gratia Singer', serif;
+
+  font-weight:200;
+
+  font-size:82px;
+
+  line-height:0.95;
+
+  letter-spacing:-2px;
+
+  margin-bottom:30px;
+
+  color:var(--white);
+}
+
+/* =========================
+   TEXT
+========================= */
+
+.text{
+
+  font-size:22px;
+  line-height:1.9;
+
+  color:var(--soft);
+
+  max-width:760px;
+
+  margin:auto;
+}
+
+.highlight{
+
+  color:#F2F0EF;
+
+  font-weight:600;
+}
+
+/* =========================
+   QUOTE
+========================= */
+
+.quote{
+
+  font-family:'Mirande', cursive;
+
+  margin-top:45px;
+
+  font-size:40px;
+
+  line-height:1.55;
+
+  font-weight:400;
+
+  color:var(--white);
+
+  animation:softGlow 4s ease-in-out infinite alternate;
+}
+
+.quote span{
+
+  color:#733E24;
+}
+
+@keyframes softGlow{
+
+  from{
+    opacity:0.88;
+  }
+
+  to{
+    opacity:1;
+  }
+
+}
+
+/* =========================
+   REDIRECT TEXT
+========================= */
+
+.redirect{
+
+  margin-top:42px;
+
+  color:rgba(242,240,239,0.6);
+
+  font-size:15px;
+  letter-spacing:1.8px;
+
+  text-transform:uppercase;
+}
+
+/* =========================
+   LOADER
+========================= */
+
+.loader{
+
+  width:180px;
+  height:5px;
+
+  margin:24px auto 0;
+
+  border-radius:20px;
+
+  background:rgba(255,255,255,0.06);
+
+  overflow:hidden;
+}
+
+.loader::after{
+
+  content:'';
+
+  display:block;
+
+  width:0%;
+  height:100%;
+
+  border-radius:20px;
+
+  background:
+  linear-gradient(
+    90deg,
+    #245F73,
+    #733E24
+  );
+
+  animation:load 10s linear forwards;
+}
+
+@keyframes load{
+
+  from{
+    width:0%;
+  }
+
+  to{
+    width:100%;
+  }
+
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+
+  margin-top:45px;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+
+  color:rgba(242,240,239,0.45);
+
+  font-size:13px;
+  letter-spacing:2px;
+
+  text-transform:uppercase;
+}
+
+/* =========================
+   LUXURY LINES
+========================= */
+
+.line{
+
+  position:absolute;
+
+  background:
+  linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,0.08),
+    transparent
+  );
+}
+
+.line1{
+
+  top:0;
+  left:0;
+
+  width:100%;
+  height:1px;
+}
+
+.line2{
+
+  top:0;
+  right:0;
+
+  width:1px;
+  height:100%;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+  .card{
+    padding:50px 28px;
+  }
+
+  h1{
+    font-size:48px;
+  }
+
+  .warning{
+    font-size:52px;
+  }
+
+  .text{
+    font-size:18px;
+  }
+
+  .quote{
+    font-size:28px;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Ambient Lights -->
+<div class="blur blur1"></div>
+<div class="blur blur2"></div>
+
+<!-- Main Card -->
+<div class="card">
+
+  <div class="line line1"></div>
+  <div class="line line2"></div>
+
+  <div class="badge">
+    <div class="dot"></div>
+    Cyber Awareness • VBIT
+  </div>
+
+  <div class="warning">⚠</div>
+
+  <h1>
+    Think Before<br>
+    You Scan
+  </h1>
+
+  <p class="text">
+    Unknown QR codes can redirect users to
+    <span class="highlight">phishing websites</span>,
+    trigger <span class="highlight">malware attacks</span>,
+    or steal sensitive credentials.
+  </p>
+
+  <br>
+
+  <p class="text">
+    This QR is safe. Welcome to
+    <span class="highlight">Cyber Security @ VBIT</span>.
+  </p>
+
+  <div class="quote">
+    “Curiosity brought you here.<br>
+    <span>Cyber Security will take you further.</span>”
+  </div>
+
+  <div class="redirect">
+    Redirecting to Official Website...
+  </div>
+
+  <div class="loader"></div>
+
+  <div class="footer">
+    Department of Cyber Security Engineering
+  </div>
+
+</div>
+
+<!-- Luxury Cinematic Redirect -->
+
+<script>
+
+  setTimeout(() => {
+
+    document.body.style.opacity = "0";
+
+    document.body.style.transform = "scale(1.05)";
+
+    document.body.style.filter = "blur(8px)";
+
+    setTimeout(() => {
+
+      window.location.href =
+      "https://vbithyd.ac.in/department-of-cse-cs/";
+
+    }, 1800);
+
+  }, 10000);
+
+</script>
+
+</body>
+</html>
+
+/* =========================
+   PRODUCTION RESPONSIVE UPGRADES
+========================= */
+
+/* Replace body height section */
+
+body{
+
+  min-height:100svh;
+
+  width:100%;
+
+  overflow:hidden;
+
+  padding:clamp(16px, 2vw, 24px);
+
+}
+
+/* =========================
+   CARD
+========================= */
+
+.card{
+
+  width:min(92%, 920px);
+
+  padding:
+  clamp(28px, 5vw, 72px)
+  clamp(24px, 5vw, 60px);
+
+  border-radius:clamp(24px, 4vw, 36px);
+
+}
+
+/* =========================
+   TITLE
+========================= */
+
+h1{
+
+  font-size:clamp(42px, 8vw, 82px);
+
+  line-height:0.95;
+
+  letter-spacing:
+  clamp(-1px, -0.15vw, -2px);
+
+}
+
+/* =========================
+   WARNING ICON
+========================= */
+
+.warning{
+
+  font-size:clamp(48px, 8vw, 72px);
+
+}
+
+/* =========================
+   BODY TEXT
+========================= */
+
+.text{
+
+  font-size:clamp(16px, 2vw, 22px);
+
+  line-height:1.9;
+
+  max-width:min(100%, 760px);
+
+}
+
+/* =========================
+   QUOTE
+========================= */
+
+.quote{
+
+  font-size:clamp(24px, 4vw, 40px);
+
+  line-height:1.5;
+
+  margin-top:clamp(28px, 4vw, 45px);
+
+}
+
+/* =========================
+   BADGE
+========================= */
+
+.badge{
+
+  font-size:clamp(11px, 1.5vw, 13px);
+
+  padding:
+  clamp(8px, 1vw, 10px)
+  clamp(14px, 2vw, 18px);
+
+}
+
+/* =========================
+   REDIRECT TEXT
+========================= */
+
+.redirect{
+
+  font-size:clamp(12px, 1.5vw, 15px);
+
+  letter-spacing:clamp(1px, 0.2vw, 1.8px);
+
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+
+  font-size:clamp(11px, 1.2vw, 13px);
+
+  letter-spacing:clamp(1px, 0.3vw, 2px);
+
+  flex-wrap:wrap;
+
+  text-align:center;
+
+}
+
+/* =========================
+   LOADER
+========================= */
+
+.loader{
+
+  width:min(180px, 70vw);
+
+}
+
+/* =========================
+   AMBIENT LIGHTS
+========================= */
+
+.blur{
+
+  filter:blur(clamp(70px, 10vw, 120px));
+
+}
+
+/* =========================
+   MOBILE OPTIMIZATION
+========================= */
+
+@media (max-width:768px){
+
+  body{
+
+    align-items:center;
+
+    padding:16px;
+
+  }
+
+  .card{
+
+    width:100%;
+
+    max-width:100%;
+
+  }
+
+  .quote br{
+
+    display:none;
+
+  }
+
+  .text{
+
+    line-height:1.8;
+
+  }
+
+}
+
+/* =========================
+   SMALL PHONE SAFETY
+========================= */
+
+@media (max-width:420px){
+
+  body{
+
+    padding:12px;
+
+  }
+
+  .card{
+
+    padding:24px 20px;
+
+    border-radius:22px;
+
+  }
+
+  .badge{
+
+    margin-bottom:24px;
+
+  }
+
+  .warning{
+
+    margin-bottom:12px;
+
+  }
+
+  .redirect{
+
+    margin-top:28px;
+
+  }
+
+  .footer{
+
+    margin-top:30px;
+
+    line-height:1.6;
+
+  }
+
+}
+
+/* =========================
+   LANDSCAPE MOBILE
+========================= */
+
+@media (max-height:600px) and (orientation:landscape){
+
+  body{
+
+    padding:14px;
+
+  }
+
+  .card{
+
+    padding:22px 28px;
+
+  }
+
+  .quote{
+
+    margin-top:18px;
+
+  }
+
+  .redirect{
+
+    margin-top:18px;
+
+  }
+
+  .footer{
+
+    margin-top:22px;
+
+  }
+
+}
+
+/* =========================
+   ULTRA WIDE
+========================= */
+
+@media (min-width:1800px){
+
+  .card{
+
+    max-width:1100px;
+
+  }
+
+  h1{
+
+    max-width:900px;
+
+    margin-inline:auto;
+
+  }
+
+}
+
+/* =========================
+   SAFE AREA SUPPORT
+========================= */
+
+@supports (padding:max(0px)) {
+
+  body{
+
+    padding-left:
+    max(16px, env(safe-area-inset-left));
+
+    padding-right:
+    max(16px, env(safe-area-inset-right));
+
+    padding-top:
+    max(16px, env(safe-area-inset-top));
+
+    padding-bottom:
+    max(16px, env(safe-area-inset-bottom));
+  }
+
+}
